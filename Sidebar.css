@@ -1,0 +1,43 @@
+/* Sidebar.css */
+body {
+  margin: 0;
+  overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -30%; /* Oculta la barra lateral inicialmente */
+  width: 30%;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 1.25em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  transition: left 0.3s;
+}
+
+.sidebar:hover, .sidebar.active {
+  left: 0; /* Muestra la barra cuando el mouse está sobre ella o está activa */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+/* Media Query para hacerlo responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -30%; /* Oculta la barra en dispositivos móviles inicialmente */
+  }
+
+  .sidebar.active {
+    left: 0; /* Muestra la barra en dispositivos móviles cuando está activa */
+  }
+}
